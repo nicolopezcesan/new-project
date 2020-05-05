@@ -2,7 +2,7 @@
 
 import { encode } from 'jwt-simple';
 import moment from 'moment';
-const secret = 'clave_secreta_curso_desarrollar_red_social_angular';
+import SECRET_KEY from './../constants';
 
 export function createToken(user) {
     const payload = {
@@ -18,5 +18,5 @@ export function createToken(user) {
         test2: user._id
     };
 
-    return encode(payload, secret);
+    return encode(payload, SECRET_KEY);
 }
